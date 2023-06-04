@@ -13,7 +13,6 @@ import { UniversityEffect } from '@states/universities/universities.effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { SortableDirective } from '@directives/sortable/sortable.directive';
 import { UniversityDetailModalComponent } from './components/modals/university-detail-modal/university-detail-modal.component';
 
 @NgModule({
@@ -21,7 +20,6 @@ import { UniversityDetailModalComponent } from './components/modals/university-d
     AppComponent,
     SearchBarComponent,
     ListComponentComponent,
-    SortableDirective,
     UniversityDetailModalComponent
   ],
   imports: [

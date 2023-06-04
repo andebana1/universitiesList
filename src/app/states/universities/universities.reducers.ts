@@ -9,8 +9,6 @@ import {
 export const initialState: UniversityState = {
   universityList: [],
   searchTerm: '',
-  sortColumn: '',
-  sortDirection: '',
   searching: false,
 }
 

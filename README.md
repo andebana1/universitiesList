@@ -1,6 +1,6 @@
 # UniversitiesList
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.10.
+This project was generated with Node.JS v14.16.0 and [Angular CLI](https://github.com/angular/angular-cli) version 14.2.10.
 
 ## Development server
 

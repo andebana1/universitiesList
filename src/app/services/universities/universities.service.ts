@@ -21,27 +21,15 @@ export class UniversitiesService {
     return this.http.get<University[]>(endpointUrl, {params});
   }
 
-  getUniversityLink(university: University): string {
+  getUniversityLink(university: University, multiples: boolean = false): string {
     if (university.web_pages.length === 0) return 'N/A';
 
-    return university.web_pages[0];
+    return multiples ? university.web_pages.join('\n') : university.web_pages[0];
   }
 
-  getUniversityLinks(university: University): string {
-    if (university.web_pages.length === 0) return 'N/A';
-
-    return university.web_pages.join('\n');
-  }
-
-  getUniversityDomain(university: University): string {
+  getUniversityDomain(university: University, multiples: boolean = false): string {
     if (university.domains.length === 0) return 'N/A';
 
-    return university.domains[0];
-  }
-
-  getUniversityDomains(university: University): string {
-    if (university.domains.length === 0) return 'N/A';
-
-    return university.domains.join('\n');
+    return multiples ? university.domains.join('\n') : university.domains[0];
   }
 }

@@ -2,7 +2,16 @@
   <div class="spinner-border" role="status">
   </div>
 </div>
-<table id="costumerTable" class="table table-striped table-borderless" *ngIf="!(searching$ | async)">
+<div class="card" *ngIf="!(searching$ | async) && !(universities$ | async)?.length">
+  <div class="centered-image">
+    <img class="card-img-top" src="https://app.lssquare.com/static/media/empty_product_banner.c076afe7.png" alt="Card image cap">
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">No items available</h5>
+    <p class="card-text">It seems like your search returned no items. Try again with a different name.</p>
+  </div>
+</div>
+<table id="costumerTable" class="table table-striped table-borderless" *ngIf="!(searching$ | async) && (universities$ | async)?.length">
   <thead>
     <tr>
       <th scope="col">Name</th>
@@ -11,19 +20,22 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let university of universities$ | async" class="rounded clickable" (click)="openUniversityModalDetail(university)">
-      <td class="rounded-start text-truncate">
-        <ngb-highlight
-          [result]="university?.name"
-          [term]="(searchTerm$ | async)!"
-        ></ngb-highlight>
+    <tr *ngFor="let university of universities$ | async" class="rounded">
+      <td class="rounded-start">
+        <a class="link-dark clickable">
+          <ngb-highlight
+            (click)="openUniversityModalDetail(university)"
+            [result]="university?.name"
+            [term]="(searchTerm$ | async)!"
+          ></ngb-highlight>
+        </a>
       </td>
-      <td class="text-truncate">
+      <td>
         <ngb-highlight
           [result]="university?.country"
         ></ngb-highlight>
       </td>
-      <td class="text-truncate rounded-end">
+      <td class="rounded-end">
         <ngb-highlight
           [result]="universityService.getUniversityLink(university)"
         ></ngb-highlight>

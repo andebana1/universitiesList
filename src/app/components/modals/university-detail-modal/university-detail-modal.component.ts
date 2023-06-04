@@ -29,8 +29,8 @@ export class UniversityDetailModalComponent implements OnInit {
       country: new FormControl(this.university.country),
       alpha_two_code: new FormControl(this.university.alpha_two_code),
       name: new FormControl(this.university.name),
-      domains: new FormControl(this.universityService.getUniversityDomains(this.university)),
-      web_pages: new FormControl(this.universityService.getUniversityLinks(this.university)),
+      domains: new FormControl(this.universityService.getUniversityDomain(this.university, true)),
+      web_pages: new FormControl(this.universityService.getUniversityLink(this.university, true)),
     });
   }
 

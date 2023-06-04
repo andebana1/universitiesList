@@ -1,0 +1,71 @@
+<div class="modal-header">
+  <h4 class="modal-title" id="modal-title">University Detail</h4>
+  <button
+    type="button"
+    class="btn-close"
+    aria-describedby="modal-title"
+    (click)="modal.dismiss('Cross click')"
+  ></button>
+</div>
+
+<div class="modal-body">
+  <form [formGroup]="universityForm">
+    <div class="form-group pb-3">
+      <label for="firstNameInput">Country</label>
+      <input 
+        type="text" 
+        class="form-control" 
+        id="firstNameInput" 
+        formControlName="country"
+      >
+    </div>
+    <div class="form-group pb-3">
+      <label for="alphaTwoCodeInput">Alpha Two Code</label>
+      <input 
+        type="text" 
+        class="form-control" 
+        id="alphaTwoCodeInput" 
+        formControlName="alpha_two_code"
+      >
+    </div>
+    <div class="form-group pb-3">
+      <label for="nameInput">Name</label>
+      <input 
+        type="text" 
+        class="form-control" 
+        id="nameInput" 
+        formControlName="name"
+      >
+    </div>
+    <div class="form-group pb-3">
+      <label for="domainsInput">Domains</label>
+      <textarea 
+        type="text" 
+        class="form-control" 
+        id="domainsInput"
+        formControlName="domains"
+        rows="3"
+      ></textarea>
+    </div>
+    <div class="form-group pb-3">
+      <label for="pagesInput">Web Pages</label>
+      <textarea 
+        type="text" 
+        class="form-control" 
+        id="pagesInput"
+        formControlName="web_pages"
+        rows="3"
+      ></textarea>
+    </div>
+  </form>
+</div>
+
+<div class="modal-footer">
+  <button 
+    type="button" 
+    class="btn btn-outline-secondary" 
+    (click)="modal.dismiss()"
+  >
+    Close
+  </button>
+</div>
